@@ -7,5 +7,5 @@ CREATE TABLE items (
   price FLOAT NOT NULL,
   picture_url TEXT,
   description TEXT,
-  cook_time_in_minutes INT
+  cook_time_in_minutes INTEGER
 );
