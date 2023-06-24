@@ -1,9 +1,10 @@
--- Drop and recreate orders table (Example)
+-- Drop and recreate Orders table
 
 DROP TABLE IF EXISTS orders CASCADE;
+
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,,
-  start TIMESTAMP,
-  complete TIMESTAMP
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  time_start TIMESTAMP,
+  time_completed TIMESTAMP
 );
