@@ -23,6 +23,13 @@ router.post('/', (req, res) => {
       if (password !== user[0].password) {
         return res.send ({error: "Incorrect Password" });
       }
+      
+      res.cookie('session', user[0].id, { 
+        maxAge: 24 * 60 * 60 * 1000,
+        httpOnly: true, // Cookie is only accessible via HTTP(S)
+        secure: true // Cookie is only sent over HTTPS
+      });
+      res.send('Login successful');
     });
 })
 
