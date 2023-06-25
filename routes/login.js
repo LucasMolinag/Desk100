@@ -23,8 +23,6 @@ router.post('/', (req, res) => {
       if (password !== user[0].password) {
         return res.send ({error: "Incorrect Password" });
       }
-
-      req.session.userId = user.id;
     });
 })
 
