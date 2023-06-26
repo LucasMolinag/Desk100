@@ -10,11 +10,12 @@ const loginQuery = require("../db/queries/02_get_user_with_email");
 
 router.get('/', (req, res) => {
   console.log("routes - login - get");
-  if (!req.session || !req.session.userID) {
+  if (!req.session || !req.session.id) {
     console.log("NOT logged in");
-    res.render("login", { user: null });
+    res.render("login", { id: null });
   } else {
-    console.log("logged in", req.session.userID);
+    console.log("logged in");
+    console.log(req.session.name, req.session.name);
     res.redirect("/users");
   }
 }); 
@@ -34,9 +35,10 @@ router.post('/', (req, res) => {
         return res.send ({error: "Incorrect Password" });
       }
 
-      req.session.userID = user[0].id;
+      req.session.id = user[0].id;
+      req.session.name = user[0].name;
       console.log("req.session");
-      console.log(req.session, req.session.userID);
+      console.log(req.session, req.session.id);
       res.redirect("/");
     });
 })

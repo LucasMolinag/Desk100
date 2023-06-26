@@ -55,9 +55,13 @@ app.use('/login', loginRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  const user = req.session.user;
-  console.log('server');
-  res.render('index', { user: user });
+  const templateVars = {
+    id: req.session.id,
+    name: req.session.name
+  };
+
+  console.log('server', templateVars);
+  res.render('index', templateVars);
 });
 
 app.listen(PORT, () => {

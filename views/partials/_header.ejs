@@ -16,8 +16,8 @@
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="/menu">Menu</a>
         <div class="ml-auto" >
-        <% if (user) { %>
-          Logged In As: <%= user.name %>;
+        <% if (id) { %>
+          Logged In As: <%= name %>;
           <form method = "POST" action="/logout">
             <button type="submit" class="btn btn-primary">Logout</button>
           </form>
