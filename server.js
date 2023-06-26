@@ -55,9 +55,9 @@ app.use('/login', loginRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  console.log('server', );
-  const userID = req.session.userID;
-  res.render('index', { user: userID });
+  const user = req.session.user;
+  console.log('server', user);
+  res.render('index', { user: user });
 });
 
 app.listen(PORT, () => {
