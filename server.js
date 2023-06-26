@@ -56,7 +56,7 @@ app.use('/login', loginRoutes);
 
 app.get('/', (req, res) => {
   const user = req.session.user;
-  console.log('server', user);
+  console.log('server');
   res.render('index', { user: user });
 });
 

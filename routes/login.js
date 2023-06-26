@@ -3,20 +3,20 @@ const express = require('express');
 const router  = express.Router();
 const loginQuery = require("../db/queries/02_get_user_with_email");
 
+// const users = {
+//   1: { id: 1, name: 'Desk100', password: 'password' },
+//   2: { id: 2, name: 'User', password: 'password' }
+// };
+
 router.get('/', (req, res) => {
   console.log("routes - login - get");
-  res.render('login');
-
-
-  const userID = req.session.userID;
-  const user = users[userID];
-
-  if (!user) {
+  if (!req.session || !req.session.userID) {
+    console.log("NOT logged in");
     res.render("login", { user: null });
   } else {
-    res.redirect("/index");
+    console.log("logged in", req.session.userID);
+    res.redirect("/users");
   }
-
 }); 
 
 router.post('/', (req, res) => {
