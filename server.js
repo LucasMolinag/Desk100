@@ -39,6 +39,8 @@ app.use(
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
+const orderHistoryApi = require('./routes/orderhistory-api')
+const orderHistory = require('./routes/orderhistory')
 const loginRoutes = require('./routes/login');
 
 // Mount all resource routes
@@ -47,6 +49,8 @@ const loginRoutes = require('./routes/login');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+app.use('/api/orderhistory', orderHistoryApi);
+app.use('/orderhistory', orderHistory);
 app.use('/login', loginRoutes);
 // Note: mount other resources here, using the same pattern above
 
