@@ -9,26 +9,35 @@ const loginQuery = require("../db/queries/02_get_user_with_email");
 // };
 
 router.get('/', (req, res) => {
+  console.log("routes - login - get");
+  // check if logged in
   if (!req.session || !req.session.id) {
+    console.log("NOT logged in");
     res.render("login", { id: null });
   } else {
+    console.log("logged in");
+    console.log(req.session.name, req.session.name);
     res.redirect("/users");
   }
 }); 
 
 router.post('/', (req, res) => {
+  console.log("routes - login - post");
   const { email, password} = req.body;
   
   loginQuery.getUserWithEmail(email)
     .then((user) => {
       if(!user) {
+        console.log("no user found");
         return res.send({ error: "no user with that id" });
       }
       
       if (password !== user[0].password) {
         return res.send ({error: "Incorrect Password" });
       }
-
+      // set session cookie
+      req.session.id = user[0].id;
+      req.session.name = user[0].name;
       res.redirect("/");
     });
 })
