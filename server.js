@@ -60,7 +60,6 @@ app.get('/', (req, res) => {
     name: req.session.name
   };
 
-  console.log('server', templateVars);
   res.render('index', templateVars);
 });
 
