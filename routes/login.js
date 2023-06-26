@@ -6,6 +6,17 @@ const loginQuery = require("../db/queries/02_get_user_with_email");
 router.get('/', (req, res) => {
   console.log("routes - login - get");
   res.render('login');
+
+
+  const userID = req.session.userID;
+  const user = users[userID];
+
+  if (!user) {
+    res.render("login", { user: null });
+  } else {
+    res.redirect("/index");
+  }
+
 }); 
 
 router.post('/', (req, res) => {
@@ -14,22 +25,19 @@ router.post('/', (req, res) => {
   
   loginQuery.getUserWithEmail(email)
     .then((user) => {
-      console.log('user=======', user);
       if(!user) {
         console.log("no user found");
         return res.send({ error: "no user with that id" });
       }
-      console.log(user[0].name, user[0].phone_number);
+      
       if (password !== user[0].password) {
         return res.send ({error: "Incorrect Password" });
       }
-      
-      res.cookie('session', user[0].id, { 
-        maxAge: 24 * 60 * 60 * 1000,
-        httpOnly: true, // Cookie is only accessible via HTTP(S)
-        secure: true // Cookie is only sent over HTTPS
-      });
-      res.send('Login successful');
+
+      req.session.userID = user[0].id;
+      console.log("req.session");
+      console.log(req.session, req.session.userID);
+      res.redirect("/");
     });
 })
 

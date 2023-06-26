@@ -8,6 +8,7 @@ const morgan = require('morgan');
 
 const PORT = process.env.PORT || 8080;
 const app = express();
+const cookieSession = require("cookie-session");
 
 app.set('view engine', 'ejs');
 
@@ -25,6 +26,13 @@ app.use(
   })
 );
 app.use(express.static('public'));
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["LHL", "Desk100"],
+    maxAge: 24 * 60 * 60 * 1000
+  })
+);
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
@@ -47,7 +55,9 @@ app.use('/login', loginRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  res.render('index');
+  console.log('server', );
+  const userID = req.session.userID;
+  res.render('index', { user: userID });
 });
 
 app.listen(PORT, () => {
