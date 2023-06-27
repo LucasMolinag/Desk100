@@ -46,6 +46,8 @@ const orderHistory = require('./routes/orderhistory');
 const menuApiRoutes = require('./routes/menu-api');
 const menuRoutes = require('./routes/menu');
 
+const addItemRoutes = require('./routes/addItem');
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
@@ -58,6 +60,9 @@ app.use('/orderhistory', orderHistory);
 
 app.use('/api/menu', menuApiRoutes);
 app.use('/menu', menuRoutes);
+
+app.use('/addItem', addItemRoutes);
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page
