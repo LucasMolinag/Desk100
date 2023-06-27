@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
 
       req.session.id = user.id;
       req.session.name = user.name;
-      res.redirect("/");
+      res.redirect("/menu");
     })
     .catch((err) => res.send(err));
 

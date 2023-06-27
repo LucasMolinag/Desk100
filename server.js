@@ -39,10 +39,14 @@ app.use(
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
-const orderHistoryApi = require('./routes/orderhistory-api')
-const orderHistory = require('./routes/orderhistory')
+const orderHistoryApi = require('./routes/orderhistory-api');
+const orderHistory = require('./routes/orderhistory');
+
 const loginRoutes = require('./routes/login');
 const signupRoutes = require('./routes/signup');
+
+const menuApiRoutes = require('./routes/menu-api');
+const menuRoutes = require('./routes/menu');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -52,8 +56,12 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/api/orderhistory', orderHistoryApi);
 app.use('/orderhistory', orderHistory);
+
 app.use('/login', loginRoutes);
 app.use('/signup', signupRoutes);
+
+app.use('/api/menu', menuApiRoutes);
+app.use('/menu', menuRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -66,7 +74,7 @@ app.get('/', (req, res) => {
     name: req.session.name
   };
 
-  res.render('index', templateVars);
+  res.render('menu', templateVars);
 });
 
 app.listen(PORT, () => {
