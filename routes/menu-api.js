@@ -9,6 +9,6 @@ router.get('/', (req, res) => {
       res.send(items);
     })
     .catch((e) => res.send(e));
-}); 
+});
 
 module.exports = router;

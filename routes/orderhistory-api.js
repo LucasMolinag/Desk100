@@ -9,11 +9,11 @@ router.get('/', (req, res) => {
   if (true) {
     database.getOrders('2').then((orders) => {    // TODO use user_ID instead of '2'
       console.log('in orderhistory');
-      console.log(orders)
+      console.log(orders);
       res.send(orders);
     })
-    .catch((e) => res.send(e));
+      .catch((e) => res.send(e));
   }
-}); 
+});
 
 module.exports = router;
