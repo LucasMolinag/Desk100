@@ -10,14 +10,14 @@ router.get('/', (req, res) => {
   } else {
     res.redirect("/user");
   }
-}); 
+});
 
 router.post('/', (req, res) => {
   const { email, password, name, phone} = req.body;
   signupQuery
     .addUser(name, phone, email, password)
     .then((user) => {
-      if(!user) {
+      if (!user) {
         return res.send({error: "addUser error"});
       }
 

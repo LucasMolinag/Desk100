@@ -9,7 +9,7 @@ const express = require('express');
 const router  = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('users', {user: null} );
-}); 
+  res.render('users', {user: null});
+});
 
 module.exports = router;

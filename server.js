@@ -45,9 +45,6 @@ const loginRoutes = require('./routes/login');
 const signupRoutes = require('./routes/signup');
 const logoutRoutes = require('./routes/logout');
 
-const orderHistoryApi = require('./routes/orderhistory-api');
-const orderHistory = require('./routes/orderhistory');
-
 const menuApiRoutes = require('./routes/menu-api');
 const menuRoutes = require('./routes/menu');
 
