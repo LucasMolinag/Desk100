@@ -14,12 +14,3 @@ const getOrderItems = function ()
 };
 
 module.exports = { getOrderItems };
-
-
-// SELECT items.name, items.price, order_items.quantity
-// FROM items
-// JOIN order_items ON order_items.item_id = items.id
-// JOIN orders ON orders.id = order_items.order_id
-// WHERE item_id = 1 AND order_id = 1
-// GROUP BY items.id, order_items.quantity
-// ORDER BY items.id
