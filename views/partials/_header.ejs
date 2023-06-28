@@ -1,29 +1,15 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark bg-success">
-    <a class="navbar-brand" href="/">Desk 100</a>
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="/menu">Menu</a>
-        <div class="ml-auto" >
-        <% if (id) { %>
-          Logged In As: <%= name %>
-          <form method = "POST" action="/logout">
-            <button type="submit" class="btn btn-primary">Logout</button>
-          </form>
-        <% } else { %>
-            <a href = "/login" class="btn btn-primary">Login</a>
-        <% } %>
-        <a class="nav-item nav-link" href="/signup">Sign Up</a>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
-        <div class="dropdown-content">
-          <a href = "/account">Account</a>
-        </div>
-      </div> 
-    </div>
-    </div>
-  </nav>
+<nav>
+  <ul>
+  <li><a href="#">Desk 100</a></li>
+  <li><a href="#">Menu</a></li>
+  <div class = "login">  <li><a href="/login">Login</a></li>
+    <li><a href= "#">Logout</a></li>
+    <li><a href="/signup">Register</a></li>
+  </div>
+</ul>
+</nav>
+<div class = "headerimage">
+  <img src="https://www.rappler.com/tachyon/2022/09/Front.JPG.jpg" alt="Olive Garden">
+</div>
 </header>
