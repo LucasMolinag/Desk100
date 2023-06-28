@@ -36,14 +36,11 @@ app.use(
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-<<<<<<< HEAD
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const orderHistoryApi = require('./routes/orderhistory-api');
 const orderHistory = require('./routes/orderhistory');
-=======
->>>>>>> f96eee87cf0cfe19abd918fef382839ad099a035
 const loginRoutes = require('./routes/login');
 const signupRoutes = require('./routes/signup');
 const logoutRoutes = require('./routes/logout');
@@ -61,18 +58,6 @@ const addItemRoutes = require('./routes/addItem');
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/login', loginRoutes);
 app.use('/signup', signupRoutes);
-<<<<<<< HEAD
-=======
-app.use('/logout', logoutRoutes);
-
-app.use('/api/orderhistory', orderHistoryApi);
-app.use('/orderhistory', orderHistory);
-
-app.use('/api/menu', menuApiRoutes);
-app.use('/menu', menuRoutes);
-
-app.use('/addItem', addItemRoutes);
->>>>>>> f96eee87cf0cfe19abd918fef382839ad099a035
 
 // Note: mount other resources here, using the same pattern above
 
