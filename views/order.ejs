@@ -12,13 +12,19 @@
   <body>
     <%- include('partials/_header') %>
     <main style="margin: 1em;">
-      <h3>Order</h3>
-      <form method="POST" action="/order">
-        <article>
-          <!-- Insert item here -->
-        </article>
-      <button type="submit" class="btn btn-primary">Checkout</button>
-      </form>
+    
+    <!-- cart.ejs -->
+
+<h3>Cart</h3>
+<% if (orderItems.length > 0) { %>
+  <ul>
+    <% orderItems.forEach((item) => { %>
+      <li><%= item.name %> - <%= item.price %></li>
+    <% }) %>
+  </ul>
+<% } else { %>
+  <p>Your cart is empty.</p>
+<% } %>
     </main>
   </body>
 </html>
