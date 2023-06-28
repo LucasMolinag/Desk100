@@ -1,15 +1,10 @@
-// User login
 const express = require('express');
 const router  = express.Router();
-const signupQuery = require("../db/queries/add_user");
+// const addItemQuery = require("../db/queries/add_user");
 
 router.get('/', (req, res) => {
-  // check if logged in
-  if (!req.session || !req.session.id) {
-    res.render("signup", { id: null });
-  } else {
-    res.redirect("/user");
-  }
+  // console.log("routes - addItem -------") // Remove before commit --------
+  res.render("addItem", { id: null });
 }); 
 
 router.post('/', (req, res) => {

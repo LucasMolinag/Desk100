@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <!-- load scripts after the rest of the DOM gets loaded -->
+    <script src="/vendor/jquery-3.0.0.js"></script>
+  </head>
+
+  <body>
+    <%- include('partials/_header') %>
+    <main>
+      <h3>Add New Item</h3>
+      <form method="POST" action="/addItem">
+        <div>
+          <label for="url">Item Image URL: </label>
+          <input
+          class="form-control"
+          type="url"
+          name="url"
+          placeholder="https://img1.com/sample.jpg"
+          style="width: 300px;"
+          />
+          <br/>
+          <label for="name">Name: </label>
+          <input
+            class="form-control"
+            type="text"
+            name="name"
+            placeholder="Dish name"
+            style="width: 300px;"
+          />
+          <br/>
+          <label for="phone">Price: $</label>
+          <input
+            class="form-control"
+            type="number" 
+            step="0.01"
+            name="price"
+            placeholder="9.99"
+            style="width: 300px;"
+          />
+          <br/>
+          <label for="name">Description: </label>
+          <input
+            class="form-control"
+            type="text"
+            name="Description"
+            style="width: 300px;"
+          />
+          <br/>
+          <label for="name">Cook Time: </label>
+          <input
+            class="form-control"
+            type="number"
+            name="cookTime"
+            placeholder="Minutes"
+            style="width: 300px;"
+          />
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </form>
+    </main>
+  </body>
+</html>

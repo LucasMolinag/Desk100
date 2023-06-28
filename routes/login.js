@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   if (!req.session || !req.session.id) {
     res.render("login", { id: null });
   } else {
-    res.redirect("/");
+    res.redirect("/menu");
   }
 }); 
 
@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
       // set session cookie
       req.session.id = user[0].id;
       req.session.name = user[0].name;
-      res.redirect("/");
+      res.redirect("/menu");
     })
     .catch((err) => res.send(err));
 })
