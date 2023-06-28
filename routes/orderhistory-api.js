@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const database = require("../db/queries/02_get_all_orders");
+const database = require("../db/queries/get_all_orders");
 
 // http://localhost:8080/orderhistory
 router.get('/', (req, res) => {

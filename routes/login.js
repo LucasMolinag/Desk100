@@ -1,7 +1,7 @@
 // User login
 const express = require('express');
 const router  = express.Router();
-const loginQuery = require("../db/queries/02_get_user_with_email");
+const loginQuery = require("../db/queries/get_user_with_email");
 
 router.get('/', (req, res) => {
   // check if logged in
@@ -32,4 +32,4 @@ router.post('/', (req, res) => {
     .catch((err) => res.send(err));
 })
 
-module.exports = router;
+module.exports = router; 

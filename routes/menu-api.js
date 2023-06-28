@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const getItemQuery = require("../db/queries/01_get_items");
+const getItemQuery = require("../db/queries/get_items");
 
 router.get('/', (req, res) => {
   // get all items from database
