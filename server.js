@@ -11,6 +11,7 @@ const app = express();
 const cookieSession = require("cookie-session");
 
 app.set('view engine', 'ejs');
+app.use(express.json({}));
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
