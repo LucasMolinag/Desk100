@@ -1,0 +1,41 @@
+@use "./colors" as color;
+
+body {
+  background-color: color.$color-light;
+    background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+
+}
+
+body {
+  main{
+    display: flex;
+    flex: wrap;
+    width:100%;
+    justify-content: center;
+    }
+  #items-container {
+    display: flex;
+    justify-content: center;
+    background-color:color.$color-plain-sec ;
+    padding: 30px;
+    width: 80%;
+    height: 100%;
+  }
+  h2{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  .item-listing {
+    width: 100%;
+    margin: 0 0 0 50px;
+  }
+  .item-listing-image {
+    width: 15vw;
+    height: 12vw;
+    border-radius: 15%;
+  }
+  
+}
+
+
