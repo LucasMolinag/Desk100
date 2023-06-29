@@ -49,8 +49,7 @@ const logoutRoutes = require('./routes/logout');
 
 const menuApiRoutes = require('./routes/menu-api');
 const menuRoutes = require('./routes/menu');
-
-const addItemRoutes = require('./routes/addItem');
+const addItemRoutes = require('./routes/addItem')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own

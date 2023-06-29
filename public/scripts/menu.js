@@ -14,13 +14,14 @@ const createItemElement = function(item) {
   let $item = $(`
   <article class="item-listing">
       <section class="item-listing__image">
-        <img src="${item.picture_url}">
+        <img class='item-listing-image'src="${item.picture_url}">
       </section>
-      <section class="item-listing__details">
+      <div class="item-listing__details">
         <h3 class="item-listing__title">${item.name}</h3>
-        <div class="item-listing__price">$ ${item.price}</div>
+        <div class="item-listing__price">$${item.price}</div>
         <div class="item-listing__cook_time_in_minutes">Cook Time: ${item.cook_time_in_minutes}</div>
-      </section>
+        <div class ="button"><button class="order-button" class="nav-item nav-link" href="/order">Add to order</button> </div>
+      </div>
     </article>
   `);
 
