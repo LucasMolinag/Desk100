@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
     id: req.session.id,
     name: req.session.name
   };
+  console.log(templateVars, "console log from /menu.js");
   res.render('menu', templateVars);
 });
 
