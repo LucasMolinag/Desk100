@@ -2,7 +2,7 @@ li {
   float: left;
 }
 
-a {
+header a {
   display: block;
   padding: 8px;
   background-color: #b11313;
@@ -39,7 +39,14 @@ li a:hover {
   justify-content: flex-end;
 }
 
-img {
+header img {
   height: 200px;
   width: 100%;
+}
+
+.logged-in-name {
+  display: flex;
+  color: #ffffff;
+  font-weight: bold;
+  align-items: center;
 }

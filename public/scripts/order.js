@@ -10,31 +10,32 @@ const renderItems = function(items) {
 }
 
 // add item to cart
-function buttonclick(id) {
-  console.log("button id click is: ",id);
-  $.ajax({
-    method: 'POST',
-    url: '/api/addToCart',
-    data: {id: id}
-  })
-  .done(res => {
-    console.log(res);
-  })
-}
+// function buttonclick(id) {
+//   console.log("button id click is: ",id);
+//   $.ajax({
+//     method: 'POST',
+//     url: '/api/addToCart',
+//     data: {id: id}
+//   })
+//   .done(res => {
+//     console.log(res);
+//   })
+// }
 
 // generate individual item
 const createItemElement = function(item) {
+  // <section class="item-listing__image">
+  //       <img class='item-listing-image'src="${item.picture_url}">
+  //     </section>
   let $item = $(`
   <article class="item-listing">
-      <section class="item-listing__image">
+      
+      <section class="item-listing__details">
         <img class='item-listing-image'src="${item.picture_url}">
-      </section>
-      <div class="item-listing__details">
         <h3 class="item-listing__title">${item.name}</h3>
-        <div class="item-listing__price">$${item.price}</div>
-        <div class="item-listing__cook_time_in_minutes">Cook Time: ${item.cook_time_in_minutes}</div>
+        <div class="item-listing__quantity">x ${item.quantity}</div>
+        <div class="item-listing__total">$ ${item.total}</div>
       </section>
-      <button class="add-to-cart" onclick="buttonclick(${item.id})">Add To Cart</button>
     </article>
   `);
 
@@ -44,9 +45,10 @@ const createItemElement = function(item) {
 $().ready(function() {
   $.ajax({
     method: 'GET',
-    url: '/api/menu'
+    url: '/api/order'
   })
   .done((items) => {
+    console.log("script - order ------") // testing ------------
     renderItems(items);
   });
 })
