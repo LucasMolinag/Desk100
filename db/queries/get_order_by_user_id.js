@@ -15,8 +15,6 @@ const getOrderByUserID = (userID, orderID) => {
   
   return db.query(queryString, values)
     .then(data => {
-      console.log('sending data.row: '); // test -----------
-      console.log(data.rows); // test -----------
       return data.rows;
     })
     .catch((e) => {

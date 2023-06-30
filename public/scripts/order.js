@@ -3,30 +3,18 @@
 const renderItems = function(items) {
   const $itemsContainer = $('#items-container');
   $itemsContainer.empty();
-
-  items.forEach(elm => {
-    $itemsContainer.append(createItemElement(elm));
-  });
+  if(items.length === 0) {
+    $itemsContainer.append($(`<p>Your cart is empty!</p>`));
+  } else {
+    items.forEach(elm => {
+      $itemsContainer.append(createItemElement(elm));
+    });
+  }
+  
 }
-
-// add item to cart
-// function buttonclick(id) {
-//   console.log("button id click is: ",id);
-//   $.ajax({
-//     method: 'POST',
-//     url: '/api/addToCart',
-//     data: {id: id}
-//   })
-//   .done(res => {
-//     console.log(res);
-//   })
-// }
 
 // generate individual item
 const createItemElement = function(item) {
-  // <section class="item-listing__image">
-  //       <img class='item-listing-image'src="${item.picture_url}">
-  //     </section>
   let $item = $(`
   <article class="item-listing">
       
@@ -48,7 +36,7 @@ $().ready(function() {
     url: '/api/order'
   })
   .done((items) => {
-    console.log("script - order ------") // testing ------------
+    // console.log("script - order ------", items) // testing ------------
     renderItems(items);
   });
 })

@@ -4,6 +4,7 @@ const getOrderQueries = require('../db/queries/get_orders');
 const updateItemQueries = require('../db/queries/upate_order');
 const addToExistOrderQueries = require('../db/queries/add_to_existing_order');
 
+
 router.post('/', (req, res) => {
   const { id } = req.body;
   // console.log(req.body, req.session);
@@ -41,7 +42,7 @@ router.post('/', (req, res) => {
               .catch((e) => res.send(e));
           }
         } else {
-          // insert new order id and item
+          // insert new item to order and order_item table
           console.log('addOrderQueries.addOrder', order.order_id, id); // test---------
           addOrderQueries.addOrder(userOrderID, id)
             .then((res) => {
