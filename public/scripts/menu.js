@@ -21,7 +21,7 @@ const createItemElement = function(item) {
         <div class="item-listing__price">$${item.price}</div>
         <div class="item-listing__cook_time_in_minutes">Cook Time: ${item.cook_time_in_minutes}</div>
         <div class ="button"><button class="order-button" class="nav-item nav-link" href="/order">Add to order</button> </div>
-      </div>
+      </section>
     </article>
   `);
 
