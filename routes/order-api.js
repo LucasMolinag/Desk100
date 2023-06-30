@@ -22,9 +22,6 @@ router.post('/', (req, res) => {
 
   // Update the order items in the session
   req.session.orderItems = orderItems;
-
-  // Redirect the user to the order page
-  res.redirect('/order');
 });
 
 module.exports = router;
