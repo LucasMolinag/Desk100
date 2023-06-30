@@ -11,6 +11,7 @@ const app = express();
 const cookieSession = require("cookie-session");
 
 app.set('view engine', 'ejs');
+app.use(express.json({}));
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -50,6 +51,10 @@ const menuRoutes = require('./routes/menu');
 const addItemtoOrderApi= require ('./routes/order-api')
 
 const addItemRoutes = require('./routes/addItem');
+const addToCartApiRoutes = require('./routes/addToCart-api');
+
+const orderApiRoutes = require('./routes/order-api');
+const orderRoutes = require('./routes/order.js');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -57,10 +62,8 @@ const addItemRoutes = require('./routes/addItem');
 app.use('/login', loginRoutes);
 app.use('/signup', signupRoutes);
 app.use('/logout', logoutRoutes);
-
 app.use('/api/orderhistory', orderHistoryApi);
 app.use('/orderhistory', orderHistory);
-
 app.use('/api/menu', menuApiRoutes);
 app.use('/menu', menuRoutes);
 app.use('/order', orderRoutes);
@@ -84,5 +87,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
+  console.log(`App listening on port ${PORT}`);
 });
