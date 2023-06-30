@@ -2,6 +2,7 @@
 const express = require('express');
 const router  = express.Router();
 const signupQuery = require("../db/queries/add_user");
+const maxOrderIDQuery = require("../db/queries/get_max_orderID");
 
 router.get('/', (req, res) => {
   // check if logged in
@@ -21,9 +22,20 @@ router.post('/', (req, res) => {
         return res.send({error: "addUser error"});
       }
 
-      req.session.id = user.id;
-      req.session.name = user.name;
-      res.redirect("/menu");
+      // get max order ID from Order table and give a new order ID to current user
+      maxOrderIDQuery.maxOrderID()
+        .then((maxOrderID) => {
+          if (!maxOrderID) {
+            return res.send({error: "cannot get max order ID"});
+          }
+
+          // set session cookie
+          req.session.id = user.id;
+          req.session.name = user.name;
+          req.session.orderID = maxOrderID[0].id + 1;
+          console.log(req.session);
+          res.redirect("/menu");
+        });
     })
     .catch((err) => res.send(err));
 

@@ -9,6 +9,19 @@ const renderItems = function(items) {
   });
 }
 
+// add item to cart
+function buttonclick(id) {
+  console.log("button id click is: ",id);
+  $.ajax({
+    method: 'POST',
+    url: '/api/addToCart',
+    data: {id: id}
+  })
+  .done(res => {
+    console.log(res);
+  })
+}
+
 // generate individual item
 const createItemElement = function(item) {
   let $item = $(`
@@ -22,6 +35,8 @@ const createItemElement = function(item) {
         <div class="item-listing__cook_time_in_minutes">Cook Time: ${item.cook_time_in_minutes}</div>
         <div class ="button"><button class="order-button" class="nav-item nav-link" href="/order">Add to order</button> </div>
       </section>
+      <a class="nav-item nav-link" href="/order">Add To Cart</a>
+      <button class="add-to-cart" onclick="buttonclick(${item.id})">Add To Cart</button>
     </article>
   `);
 
