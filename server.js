@@ -37,7 +37,6 @@ app.use(
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
@@ -46,8 +45,11 @@ const orderHistory = require('./routes/orderhistory');
 const loginRoutes = require('./routes/login');
 const signupRoutes = require('./routes/signup');
 const logoutRoutes = require('./routes/logout');
+const orderRoutes = require('./routes/logout');
 const menuApiRoutes = require('./routes/menu-api');
 const menuRoutes = require('./routes/menu');
+const addItemtoOrderApi= require ('./routes/order-api')
+
 const addItemRoutes = require('./routes/addItem');
 const addToCartApiRoutes = require('./routes/addToCart-api');
 
@@ -64,10 +66,9 @@ app.use('/api/orderhistory', orderHistoryApi);
 app.use('/orderhistory', orderHistory);
 app.use('/api/menu', menuApiRoutes);
 app.use('/menu', menuRoutes);
+app.use('/order', orderRoutes);
 app.use('/addItem', addItemRoutes);
-app.use('/api/addToCart', addToCartApiRoutes);
-
-app.use('/api/order', orderApiRoutes);
+app.use('/api/order', addItemtoOrderApi);
 app.use('/order', orderRoutes);
 
 // Note: mount other resources here, using the same pattern above
