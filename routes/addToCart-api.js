@@ -26,9 +26,9 @@ router.post('/', (req, res) => {
               })
               .catch((e) => res.send(e));
           } else { 
-            console.log('insert item order_item table', order.order_id, order.item_id); // test---------
+            console.log('insert item order_item table', order.order_id, id); // test---------
             // insert item to table
-            addOrderQueries.addOrder(order.order_id, order.item_id)
+            addOrderQueries.addOrder(order.order_id, id)
               .then((res) => {
                 if(!res) {
                   return res.send({error: "cannot update order_item table"});
