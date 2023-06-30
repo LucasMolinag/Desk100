@@ -31,9 +31,10 @@ const createItemElement = function(item) {
   <article class="item-listing">
       
       <section class="item-listing__details">
+        <img class='item-listing-image'src="${item.picture_url}">
         <h3 class="item-listing__title">${item.name}</h3>
-        <div class="item-listing__quantity">$ x ${item.quantity}</div>
-        <div class="item-listing__total">$ $ ${item.total}</div>
+        <div class="item-listing__quantity">x ${item.quantity}</div>
+        <div class="item-listing__total">$ ${item.total}</div>
       </section>
     </article>
   `);
@@ -47,6 +48,7 @@ $().ready(function() {
     url: '/api/order'
   })
   .done((items) => {
+    console.log("script - order ------") // testing ------------
     renderItems(items);
   });
 })
