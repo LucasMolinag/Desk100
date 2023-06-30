@@ -23,8 +23,6 @@ router.post('/', (req, res) => {
   // Update the order items in the session
   req.session.orderItems = orderItems;
 console.log("test", req.session.orderItems);
-  // Redirect the user to the order page
-  res.redirect('/order');
   });
 });
 
