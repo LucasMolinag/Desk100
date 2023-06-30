@@ -22,7 +22,6 @@ router.post('/', (req, res) => {
 
   // Update the order items in the session
   req.session.orderItems = orderItems;
-console.log("test", req.session.orderItems);
 
   res.redirect("/menu");
 
