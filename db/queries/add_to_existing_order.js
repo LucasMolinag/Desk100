@@ -9,8 +9,6 @@ const addOrder = (order_id, item_id) => {
 
   return db.query(queryString, values)
     .then(data => {
-      console.log('query - add_oreder-------'); // test---------
-      console.log(data.rows); // test---------
       return data.rows;
     })
     .catch((err) => {
