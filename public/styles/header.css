@@ -39,7 +39,14 @@ li a:hover {
   justify-content: flex-end;
 }
 
-img {
+header img {
   height: 200px;
   width: 100%;
+}
+
+.logged-in-name {
+  display: flex;
+  color: #ffffff;
+  font-weight: bold;
+  align-items: center;
 }
