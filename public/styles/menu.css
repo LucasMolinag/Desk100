@@ -36,6 +36,9 @@ body .item-listing {
 body .item-listing .item-listing-image {
   box-shadow: 5px 5px brown;
   border-radius: 15%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 body .item-listing .item-listing__details {
   padding: 10px;
