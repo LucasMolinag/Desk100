@@ -2,7 +2,7 @@ li {
   float: left;
 }
 
-a {
+header a {
   display: block;
   padding: 8px;
   background-color: #b11313;
