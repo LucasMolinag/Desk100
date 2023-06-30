@@ -3,6 +3,7 @@ const router  = express.Router();
 const getOrderQueries = require('../db/queries/get_orders');
 const updateItemQueries = require('../db/queries/upate_order');
 const addToExistOrderQueries = require('../db/queries/add_to_existing_order');
+const addNewOrderQueries = require('../db/queries/add_new_order');
 
 
 router.post('/', (req, res) => {
@@ -26,30 +27,33 @@ router.post('/', (req, res) => {
                 if (!res) {
                   return res.send({error: "cannot update order_item table"});
                 }
-                // console.log('update order_item table',res); // test---------
+                // console.log('update order_item table',res); // test ---------
               })
               .catch((e) => res.send(e));
           } else {
-            console.log('addOrderQueries.addOrder', order.order_id, id); // test---------
+            console.log('addOrderQueries.addOrder', order.order_id, id); // test ---------
             // insert item to table
             addToExistOrderQueries.addOrder(order.order_id, id)
               .then((res) => {
                 if (!res) {
                   return res.send({error: "cannot update order_item table"});
                 }
-                // console.log('insert item to order_item table',res); // test---------
+                // console.log('insert item to order_item table',res); // test ---------
               })
               .catch((e) => res.send(e));
           }
         } else {
           // insert new item to order and order_item table
-          console.log('addOrderQueries.addOrder', order.order_id, id); // test---------
-          addOrderQueries.addOrder(userOrderID, id)
+          console.log('addOrderQueries.addOrder', order.order_id, id); // test ---------
+          const userID = req.session.id;
+          addNewOrderQueries.addNewOrder(userID)
             .then((res) => {
               if (!res) {
                 return res.send({error: "cannot update order_item table"});
               }
-              // console.log('insert item to order_item table',res); // test---------
+              console.log('res');
+              console.log(res);
+              // console.log('insert item to order_item table',res); // test ---------
             })
             .catch((e) => res.send(e));
         }
