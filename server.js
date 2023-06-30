@@ -44,9 +44,10 @@ const orderHistory = require('./routes/orderhistory');
 const loginRoutes = require('./routes/login');
 const signupRoutes = require('./routes/signup');
 const logoutRoutes = require('./routes/logout');
-
+const orderRoutes = require('./routes/logout');
 const menuApiRoutes = require('./routes/menu-api');
 const menuRoutes = require('./routes/menu');
+const addItemtoOrderApi= require ('./routes/order-api')
 
 const addItemRoutes = require('./routes/addItem');
 
@@ -62,8 +63,10 @@ app.use('/orderhistory', orderHistory);
 
 app.use('/api/menu', menuApiRoutes);
 app.use('/menu', menuRoutes);
-
+app.use('/order', orderRoutes);
 app.use('/addItem', addItemRoutes);
+app.use('/api/order', addItemtoOrderApi);
+app.use('/order', orderRoutes);
 
 // Note: mount other resources here, using the same pattern above
 

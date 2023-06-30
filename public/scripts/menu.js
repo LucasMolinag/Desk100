@@ -3,10 +3,11 @@
 const renderItems = function(items) {
   const $itemsContainer = $('#items-container');
   $itemsContainer.empty();
-
-  items.forEach(elm => {
-    $itemsContainer.append(createItemElement(elm));
-  });
+  if (items) {
+    items.forEach(elm => {
+      $itemsContainer.append(createItemElement(elm));
+    });
+  }
 }
 
 // generate individual item
@@ -20,6 +21,10 @@ const createItemElement = function(item) {
         <h3 class="item-listing__title">${item.name}</h3>
         <div class="item-listing__price">$ ${item.price}</div>
         <div class="item-listing__cook_time_in_minutes">Cook Time: ${item.cook_time_in_minutes}</div>
+        <form action="/order-api" method="POST">
+        <input type="hidden" name="itemId" value="<%= item.id %>">
+        <button type="submit">Add to Order</button>
+        </form>
       </section>
     </article>
   `);
@@ -33,6 +38,7 @@ $().ready(function() {
     url: '/api/menu'
   })
   .done((items) => {
+    console.log(items);
     renderItems(items);
   });
 })

@@ -9,3 +9,5 @@ const getItemById = (itemId) => {
     console.log(err.message);
   });
 };
+
+module.exports = { getItemById };
