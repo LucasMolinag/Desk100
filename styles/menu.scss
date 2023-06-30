@@ -67,5 +67,13 @@ body {
   }
 }
 
+footer {
+  padding: 5px 5px;
+  display: flex;
+  justify-content: right;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
 
 //Testing the collab branch
