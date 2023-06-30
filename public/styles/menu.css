@@ -28,15 +28,10 @@ body h2 {
   font-size: 40px;
 }
 body .item-listing {
-<<<<<<< HEAD
   margin-top: 50px;
   background-color: bisque;
   border-radius: 5%;
   padding: 10px;
-=======
-  width: 100%;
-  margin: 0 0 0 50px;
->>>>>>> commiting before pulling
 }
 body .item-listing .item-listing-image {
   box-shadow: 5px 5px brown;
