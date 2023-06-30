@@ -1,12 +1,91 @@
-.item-listing__quantity {
+body {
+  background-color: #745c49;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
   display: flex;
-  justify-content: right;
-  font-size: 20px;
+  flex-direction: column;
 }
 
-.item-listing__total {
+body main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+body #items-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #dde5b681;
+  width: 50%;
+  height: 100%;
+}
+body h2 {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  font-family: "Nova Round", cursive;
+  font-size: 40px;
+}
+body h3 {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  font-family: "Nova Round", cursive;
+  font-size: 40px;
+}
+body .item-listing {
+  margin-top: 50px;
+  background-color: bisque;
+  border-radius: 5%;
+  padding: 10px;
+}
+body .item-listing .item-listing-image {
+  display: flex;
+  box-shadow: 5px 5px brown;
+  border-radius: 15%;
+  width: 25%;
+  height: 25%;
+  object-fit: cover;
+  margin-right: 22px;
+}
+body .item-listing .item-listing__details {
+  padding: 10px;
+  margin-top: 10px;
+}
+body .item-listing .item-listing__details .item-listing__title {
+  font-size: 20px;
+}
+body .item-listing .item-listing__details .order-button {
+  background-color: bisque;
+  width: auto;
+  margin-top: 20px;
+  font-size: 20px;
+}
+body .item {
+  padding-right: 12px;
+}
+body .item-outer {
+  display: flex;
+  align-items: center;
+  padding-right: 5px;
+  font-size: 39px;
+}
+body .item-listing__total {
   display: flex;
   justify-content: right;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 35px;
+}
+body .item-quantity {
+  size: 44px;
+}
+
+footer {
+  padding: 5px 5px;
+  display: flex;
+  justify-content: right;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  color: black;
 }
