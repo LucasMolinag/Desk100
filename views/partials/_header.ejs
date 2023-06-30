@@ -5,12 +5,20 @@
       <li><a href="/menu">Menu</a></li>
       <div class="login">
         <% if (id) { %>
-          <div class="logged-in-name">Logged in as, <%= name %>!
-          <li><a href="/orderhistory">Order History</a></li>
-          <li><a href="/logout">Logout</a></li>
+          <% if (name !== 'Desk100') { %>
+            <div class="logged-in-name">Logged in as <%= name %>!</div>
+            <li><a href="/orderhistory">Order History</a></li>
+            <li><a href="/logout">Logout</a></li>
+          <% } %>
+        
+          <% if (name === 'Desk100') { %>
+            <div class="logged-in-name">Logged in as Admin <%= name %>!</div>
+            <li><a href="/additem">Add to Menu</a></li>
+            <li><a href="/logout">Logout</a></li>
+          <% } %>
         <% } else { %>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/signup">Register</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Register</a></li>
         <% } %>
       </div>
     </ul>
