@@ -1,11 +1,16 @@
 const express = require('express');
 const router  = express.Router();
-const getItemQuery = require("../db/queries/get_items");
+const getOrderByUserIDQuery = require("../db/queries/get_order_by_user_id");
 
 router.get('/', (req, res) => {
-  // get all items from database
-  getItemQuery.getItems()
+  console.log('req.session ', req.session); // test -----------
+  const userID = req.session.id;
+  const orderID = req.session.ordq;
+
+  getOrderByUserIDQuery.getOrderByUserID(userID, orderID)
     .then(items => {
+      console.log('route - order-api --------'); // test -----------
+      console.log(items);
       res.send(items);
     })
     .catch((e) => res.send(e));
