@@ -40,9 +40,9 @@ router.post('/', (req, res) => {
           console.log(req.session);
           res.redirect("/menu");
         })
-        .catch((err) => res.send(err));
+        .catch((e) => res.send(e));
     })
-    .catch((err) => res.send(err));
+    .catch((e) => res.send(e));
 });
 
 module.exports = router;
