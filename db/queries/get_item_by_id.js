@@ -1,8 +1,9 @@
 const db = require('../connection');
 
-const getItemById = (itemId) => {
-  return db.query('SELECT * FROM items WHERE id = $1;')
+const getItemById = (itemID) => {
+  return db.query('SELECT * FROM items WHERE id = $1;', [itemID])
   .then(data => {
+    console.log(data.rows);
     return data.rows;
   })
   .catch((err) => {

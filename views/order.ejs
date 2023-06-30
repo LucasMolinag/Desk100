@@ -1,26 +1,27 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="/styles/header.scss" />
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    
-    <!-- load scripts after the rest of the DOM gets loaded -->
-    <script src="/vendor/jquery-3.0.0.js"></script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
   </head>
 
   <body>
-    <%- include('partials/_header') %>
-    <main>
+    <main style="margin: 1em;">
     <!-- order.ejs -->
 <h3>Order</h3>
 <% if (orderItems.length > 0) { %>
   <ul>
-    <% orderItems.forEach((item) => { %>
+    <% orderItems.forEach((item) => { console.log(item) %>
       <li><%= item.name %> - <%= item.price %></li>
     <% }) %>
   </ul>
 <% } else { %>
-  <p>Your cart is empty.</p>
+  <p>Your order is empty.</p>
 <% } %>
     </main>
   </body>

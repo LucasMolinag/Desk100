@@ -21,8 +21,8 @@ const createItemElement = function(item) {
         <h3 class="item-listing__title">${item.name}</h3>
         <div class="item-listing__price">$ ${item.price}</div>
         <div class="item-listing__cook_time_in_minutes">Cook Time: ${item.cook_time_in_minutes}</div>
-        <form action="/order-api" method="POST">
-        <input type="hidden" name="itemId" value="<%= item.id %>">
+        <form action="/api/order" method="POST">
+        <input type="hidden" name="itemId" value="${item.id}">
         <button type="submit">Add to Order</button>
         </form>
       </section>

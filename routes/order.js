@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
   const orderItems = req.session.orderItems || [];
 
   // Render the cart page and pass the cartItems to the template
+  console.log(orderItems);
   res.render('order', { orderItems });
 });
 
