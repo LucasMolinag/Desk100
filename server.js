@@ -48,11 +48,7 @@ const signupRoutes = require('./routes/signup');
 const logoutRoutes = require('./routes/logout');
 const menuApiRoutes = require('./routes/menu-api');
 const menuRoutes = require('./routes/menu');
-<<<<<<< HEAD
 const addItemRoutes = require('./routes/addItem')
-=======
-const addItemRoutes = require('./routes/addItem');
->>>>>>> main
 
 const addToCartApiRoutes = require('./routes/addToCart-api');
 
