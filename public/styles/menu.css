@@ -1,18 +1,21 @@
 body {
-  background-color: #a98467;
-  background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+  background-color: #745c49;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+  display: flex;
+  flex-direction: column;
 }
 
 body main {
   display: flex;
-  flex: wrap;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: center;
 }
 body #items-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  background-color: #dde5b6;
+  background-color: #dde5b681;
   padding: 30px;
   width: 80%;
   height: 100%;
@@ -21,13 +24,31 @@ body h2 {
   margin: 30px;
   display: flex;
   justify-content: center;
+  font-family: "Nova Round", cursive;
+  font-size: 40px;
 }
 body .item-listing {
-  width: 100%;
-  margin: 0 0 0 50px;
+  margin-top: 50px;
+  background-color: bisque;
+  border-radius: 5%;
+  padding: 10px;
 }
-body .item-listing-image {
-  width: 15vw;
-  height: 12vw;
+body .item-listing .item-listing-image {
+  box-shadow: 5px 5px brown;
   border-radius: 15%;
+}
+body .item-listing .item-listing__details {
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+body .item-listing .item-listing__details .item-listing__title {
+  font-size: 20px;
+}
+body .item-listing .item-listing__details .order-button {
+  background-color: bisque;
+  width: auto;
+  margin-top: 20px;
+  font-size: 20px;
 }
