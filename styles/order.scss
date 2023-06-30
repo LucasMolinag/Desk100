@@ -20,11 +20,11 @@ body {
     flex-direction: column;
     justify-content: center;
     background-color:color.$color-plain-sec ;
-    width: 50%;
+    width: 75%;
     height: 100%;
   }
   h2{
-    margin: 30px;
+    margin: 3px;
     display: flex;
     justify-content: center;
     font-family: 'Nova Round', cursive;
@@ -32,7 +32,7 @@ body {
     // background-color: #745c494f;
   }
   h3{
-    margin: 30px;
+    margin: 3px;
     display: flex;
     justify-content: center;
     font-family: 'Nova Round', cursive;
@@ -80,12 +80,12 @@ body {
     display: flex;
     align-items: center;
     padding-right: 5px;
-    font-size: 39px;
+    font-size: 20px;
   }
   .item-listing__total{
     display: flex;
     justify-content: right;
-    font-size: 35px;
+    font-size: 25px;
   }
   .item-quantity {
     size: 44px;

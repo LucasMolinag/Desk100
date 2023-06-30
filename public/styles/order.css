@@ -17,18 +17,18 @@ body #items-container {
   flex-direction: column;
   justify-content: center;
   background-color: #dde5b681;
-  width: 50%;
+  width: 75%;
   height: 100%;
 }
 body h2 {
-  margin: 30px;
+  margin: 3px;
   display: flex;
   justify-content: center;
   font-family: "Nova Round", cursive;
   font-size: 40px;
 }
 body h3 {
-  margin: 30px;
+  margin: 3px;
   display: flex;
   justify-content: center;
   font-family: "Nova Round", cursive;
@@ -69,12 +69,12 @@ body .item-outer {
   display: flex;
   align-items: center;
   padding-right: 5px;
-  font-size: 39px;
+  font-size: 20px;
 }
 body .item-listing__total {
   display: flex;
   justify-content: right;
-  font-size: 35px;
+  font-size: 25px;
 }
 body .item-quantity {
   size: 44px;
