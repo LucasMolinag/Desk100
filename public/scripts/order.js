@@ -36,7 +36,7 @@ $().ready(function() {
     url: '/api/order'
   })
   .done((items) => {
-    // console.log("script - order ------", items) // testing ------------
+    console.log("script - order ------", items) // testing ------------
     renderItems(items);
   });
 })

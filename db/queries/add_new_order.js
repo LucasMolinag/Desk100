@@ -9,13 +9,29 @@ const addNewOrder = (userID) => {
 
   return db.query(queryString, values)
     .then(data => {
-      console.log('query - add_oreder-------'); // test ---------
-      // console.log(data.rows); // test ---------
+      console.log('query - add_oreder -------'); // test ---------
       return data.rows;
     })
-    .catch((err) => {
-      console.log(err.message);
+    .catch((e) => {
+      console.log(e.message);
     });
 };
 
-module.exports = { addNewOrder };
+const addNewOrderItem = (orderID, itemID) => {
+  const queryString = `
+  INSERT INTO order_items (order_id, item_id, quantity)
+  VALUES ($1, $2, 1)
+  RETURNING *;`;
+  const values = [orderID, itemID];
+
+  return db.query(queryString, values)
+    .then(data => {
+      console.log('query - add_oreder_item -------'); // test ---------
+      return data.rows;
+    })
+    .catch((e) => {
+      console.log(e.message);
+    });
+}
+
+module.exports = { addNewOrder, addNewOrderItem };
