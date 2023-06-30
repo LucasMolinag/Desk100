@@ -3,7 +3,11 @@ const router  = express.Router();
 const addItemQuery = require("../db/queries/add_item");
 
 router.get('/', (req, res) => {
-  res.render("addItem", { id: null });
+  const templateVars = {
+    id: req.session.id,
+    name: req.session.name
+  };
+  res.render("addItem", templateVars);
 });
 
 router.post('/', (req, res) => {
