@@ -54,6 +54,7 @@ const addItemRoutes = require('./routes/addItem');
 const addToCartApiRoutes = require('./routes/addToCart-api');
 
 const orderApiRoutes = require('./routes/order-api');
+const orderRoutes = require('./routes/order');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
