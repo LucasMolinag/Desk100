@@ -1,32 +1,29 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark bg-success">
-    <a class="navbar-brand" href="/">Desk 100</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="/menu">Menu</a>
-        <div class="ml-auto" >
+  <nav>
+    <ul>
+      <li><a href="#">Desk 100</a></li>
+      <li><a href="/menu">Menu</a></li>
+      <div class="login">
         <% if (id) { %>
-          Logged In As: <%= name %>
-          <form method = "POST" action="/logout">
-            <button type="submit" class="btn btn-primary">Logout</button>
-          </form>
+          <% if (name !== 'Desk100') { %>
+            <div class="logged-in-name">Logged in as <%= name %>!</div>
+            <li><a href="/orderhistory">Order History</a></li>
+            <li><a href="/logout">Logout</a></li>
+          <% } %>
+        
+          <% if (name === 'Desk100') { %>
+            <div class="logged-in-name">Logged in as Admin <%= name %>!</div>
+            <li><a href="/additem">Add to Menu</a></li>
+            <li><a href="/logout">Logout</a></li>
+          <% } %>
         <% } else { %>
-            <a href = "/login" class="btn btn-primary">Login</a>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Register</a></li>
         <% } %>
-        <a class="nav-item nav-link" href="/signup">Sign Up</a>
       </div>
-    </div>
-    </div>
+    </ul>
   </nav>
+  <div class="headerimage">
+    <img src="https://www.rappler.com/tachyon/2022/09/Front.JPG.jpg" alt="Olive Garden">
+  </div>
 </header>
