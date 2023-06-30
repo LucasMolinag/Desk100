@@ -1,0 +1,12 @@
+.item-listing__quantity {
+  display: flex;
+  justify-content: right;
+  font-size: 20px;
+}
+
+.item-listing__total {
+  display: flex;
+  justify-content: right;
+  font-size: 20px;
+  font-weight: bold;
+}

@@ -7,8 +7,8 @@ router.get('/', (req, res) => {
   const userID = req.session.id;
   const orderID = req.session.orderID;
 
-  // getOrderByUserIDQuery.getOrderByUserID(userID, 2) // test -----------
-  getOrderByUserIDQuery.getOrderByUserID(userID, orderID)
+  getOrderByUserIDQuery.getOrderByUserID(userID, 2) // test -----------
+  //getOrderByUserIDQuery.getOrderByUserID(userID, orderID)
     .then(items => {
       console.log('route - order-api --------'); // test -----------
       console.log(items);
