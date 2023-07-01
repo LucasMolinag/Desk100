@@ -12,7 +12,7 @@ const renderItems = function(items) {
       total += newItemElm.total;
       $itemsContainer.append(newItemElm.$item);
     });
-    $itemsContainer.append(`<div>Total: $${total}</div>`);
+    $itemsContainer.append(`<div class="total">Total: $${total}</div>`);
   }
 }
 

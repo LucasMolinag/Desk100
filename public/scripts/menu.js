@@ -18,9 +18,7 @@ function buttonclick(id) {
     url: '/api/addToCart',
     data: {id: id}
   })
-  .done(res => {
-    console.log(res);
-  })
+  .done(res => {})
 }
 
 // generate individual item
@@ -48,7 +46,6 @@ $().ready(function() {
     url: '/api/menu'
   })
   .done((items) => {
-    console.log(items);
     renderItems(items);
   });
 })

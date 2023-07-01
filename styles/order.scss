@@ -40,8 +40,8 @@ body {
     // background-color: #745c494f;
   }
   .item-listing {
-    margin-top: 50px;
-  background-color: bisque;
+    margin: 1em;
+    background-color: bisque;
     border-radius:5%;
     padding: 10px;
   
@@ -89,6 +89,20 @@ body {
   }
   .item-quantity {
     size: 44px;
+  }
+
+  .total {
+    margin: auto;
+    font-size: x-large;
+  }
+
+  .checkout {
+    display: flex;
+    justify-content: center;
+    background: white;
+    color: black;
+    width: 30%;
+    margin: auto;
   }
 
 }

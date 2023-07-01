@@ -15,10 +15,10 @@ const renderItems = function(items) {
       time += newItemElm.time;
       $itemsContainer.append(newItemElm.$item);
     });
-    $itemsContainer.append(`<div>Total: $${total}</div>`);
-    $itemsContainer.append(`<div>Time: ${time} minutes</div>`);
+    $itemsContainer.append(`<div class="total">Total: $${total}</div>`);
+    $itemsContainer.append(`<div class="time">Time: ${time} minutes</div>`);
     $itemsContainer.append(`<div>
-      <form action="/submit" method="POST">
+      <form action="/submit" method="POST" class="submit">
         <button type="submit">Submit</button>
       </form>
     </div>`);

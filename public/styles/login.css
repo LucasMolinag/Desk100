@@ -1,11 +1,9 @@
 main {
   background-color: bisque;
-  margin: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  width: 60%;
   border-radius: 20px;
   box-shadow: white 0px 0px 5px 0px;
 }
@@ -34,4 +32,5 @@ body {
 
 .login-button {
   width: 20%;
+  margin: auto;
 }

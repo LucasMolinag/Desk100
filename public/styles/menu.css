@@ -11,6 +11,18 @@ body main {
   width: 100%;
   justify-content: center;
 }
+body main .total {
+  margin: auto;
+  font-size: x-large;
+}
+body main .time {
+  margin: auto;
+  font-size: x-large;
+}
+body main .submit {
+  margin: 0 40%;
+  font-size: x-large;
+}
 body #items-container {
   display: flex;
   flex-direction: column;
