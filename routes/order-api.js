@@ -1,27 +1,21 @@
 const express = require('express');
 const router  = express.Router();
-const orderQuery = require('../db/queries/get_item_by_id');
+const getOrderByUserIDQuery = require("../db/queries/get_order_by_user_id");
 
-router.post('/', (req, res) => {
-  const { itemId } = req.body;
+router.get('/', (req, res) => {
+  // console.log('route - order-api --------'); // test -----------
+  const userID = req.session.id;
+  const orderID = req.session.orderID;
+  // console.log('req.session ', req.session); // test---------
 
-  // Retrieve the product information from the database based on productId
-  const item = orderQuery(itemId);
-
-  if (!item) {
-    // Handle if the product is not found
-    res.status(404).send('Item not found');
-    return;
-  }
-
-  // Get the existing order items from the session or create an empty array
-  const orderItems = req.session.orderItems || [];
-
-  // Add the item to the order
-  orderItems.push(item);
-
-  // Update the order items in the session
-  req.session.orderItems = orderItems;
+  // getOrderByUserIDQuery.getOrderByUserID(userID, 2) // test -----------
+  getOrderByUserIDQuery.getOrderByUserID(userID, orderID)
+    .then(items => {
+      // console.log('return from jquery'); // test -----------
+      // console.log(items); // test -----------
+      res.send(items);
+    })
+    .catch((e) => res.send(e));
 });
 
 module.exports = router;

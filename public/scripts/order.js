@@ -3,30 +3,23 @@
 const renderItems = function(items) {
   const $itemsContainer = $('#items-container');
   $itemsContainer.empty();
-
-  items.forEach(elm => {
-    $itemsContainer.append(createItemElement(elm));
-  });
+  if(items.length === 0) {
+    $itemsContainer.append($(`<p>Your cart is empty!</p>`));
+  } else {
+    let total = 0;
+    items.forEach(elm => {
+      const newItemElm = createItemElement(elm, total);
+      // console.log('newItemElm', newItemElm) // test --------
+      total += newItemElm.total;
+      $itemsContainer.append(newItemElm.$item);
+    });
+    $itemsContainer.append(`<div>Total: $${total}</div>`);
+  }
 }
 
-// add item to cart
-// function buttonclick(id) {
-//   console.log("button id click is: ",id);
-//   $.ajax({
-//     method: 'POST',
-//     url: '/api/addToCart',
-//     data: {id: id}
-//   })
-//   .done(res => {
-//     console.log(res);
-//   })
-// }
-
 // generate individual item
-const createItemElement = function(item) {
-  // <section class="item-listing__image">
-  //       <img class='item-listing-image'src="${item.picture_url}">
-  //     </section>
+const createItemElement = function(item, total) {
+  total += item.total;
   let $item = $(`
   
   <article class="item-listing">
@@ -49,16 +42,16 @@ const createItemElement = function(item) {
     </article>
   `);
 
-  return $item;
+  return { $item, total} ;
 }
 
 $().ready(function() {
+  // console.log("script - order ------") // testing ------------
   $.ajax({
     method: 'GET',
     url: '/api/order'
   })
   .done((items) => {
-    console.log("script - order ------") // testing ------------
     renderItems(items);
   });
 })

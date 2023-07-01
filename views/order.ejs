@@ -13,18 +13,12 @@
 
   <body>
     <%- include('partials/_header') %>
-    <main>
-    <!-- order.ejs -->
-<h3>Order</h3>
-<% if (orderItems.length > 0) { %>
-  <ul>
-    <% orderItems.forEach((item) => { %>
-      <li><%= item.name %> - <%= item.price %></li>
-    <% }) %>
-  </ul>
-<% } else { %>
-  <p>Your cart is empty.</p>
-<% } %>
+      <h3>Order</h3>
+      <!-- This section contain individual item -->
+      <section id="items-container"></section>
+
+      <a href = "/order">Checkout</a>
+      </form>
     </main>
   </body>
 </html>
