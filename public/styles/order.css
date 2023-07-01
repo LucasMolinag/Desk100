@@ -16,7 +16,7 @@ body #items-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #dde5b681;
+  background-color: rgba(221, 229, 182, 0.5058823529);
   width: 75%;
   height: 100%;
 }

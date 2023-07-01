@@ -1,13 +1,12 @@
 <header>
   <nav>
     <ul>
-      <li><a href="#">Desk 100</a></li>
+      <li><a href="#">Desk100</a></li>
       <li><a href="/menu">Menu</a></li>
       <div class="login">
         <% if (id) { %>
           <% if (name !== 'Desk100') { %>
             <div class="logged-in-name">Logged in as <%= name %>!</div>
-            <li><a href="/orderhistory">Order History</a></li>
             <li><a href="/logout">Logout</a></li>
           <% } %>
         
