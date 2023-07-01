@@ -13,4 +13,17 @@ const getOrderItems = function ()
     });
 };
 
-module.exports = { getOrderItems };
+const getOrderItemsById = function () 
+{
+  return db
+  .query(
+    'SELECT items.name, items.price, order_items.quantity FROM items JOIN order_items ON order_items.item_id = items.id JOIN orders ON orders.id = order_items.order.id  WHERE order_id = $1 GROUP BY order_items.order_id ORDER BY items.id;')
+    .then(data => {
+      return data.rows;
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+};
+
+module.exports = { getOrderItems,  getOrderItemsById};

@@ -1,15 +1,16 @@
 const express = require('express');
 const router  = express.Router();
+const checkout = require("../db/queries/checkout");
+const getOrderByUserIDQuery = require("../db/queries/get_order_by_user_id");
 
-// Cart page
 router.get('/', (req, res) => {
   const templateVars = {
     id: req.session.id,
     name: req.session.name
   };
+  
+  res.render("single-order", templateVars);
 
-  // Render the cart page and pass the cartItems to the template
-  res.render('order', templateVars);
 });
 
 module.exports = router;

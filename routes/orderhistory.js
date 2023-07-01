@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
       name: req.session.name,
       orders
     };
-    res.render('order-history', templateVars);
+    res.render('single-order', templateVars);
   })
     .catch((e) => res.send(e));
 });

@@ -12,14 +12,23 @@
   <script defer src="/scripts/order-history.js"></script>
   <link rel="stylesheet" href="../styles/header.css" />
   <link rel="stylesheet" href="../styles/order-history.css">
-
+  <link rel="stylesheet" href="../styles/singleorder.css">
 </head>
 
 <body>
   <%- include('partials/_header') %>
   <div class="container">
     <h2 >Single Order:</h2>
-    <ul id="orders"></ul>
+    <br>
+    <h3>Thank you for ordering! Your order has been submitted</h3>
+    <% orders.forEach((order) => { %>
+      <tr>
+        <td><%= order.name %></td>
+        <td>Price: $<%= order.price %></td>
+        <td>Quantity: <%= order.quantity %></td>
+        <td><img src ="<%= order.picture_url %>" alt="Images"></td>
+      </tr>
+    <% }); %>
   </div>
 </body>
 

@@ -54,7 +54,7 @@ const orderRoutes = require('./routes/order');
 const checkoutApiRoutes = require('./routes/checkout-api');
 const checkOutRoutes = require('./routes/checkout');
 const submitRoutes = require('./routes/submit');
-
+const singleOrder = require('./routes/single-order');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
@@ -70,6 +70,7 @@ app.use('/addItem', addItemRoutes);
 app.use('/api/addToCart', addToCartApiRoutes);
 app.use('/api/order', orderApiRoutes);
 app.use('/order', orderRoutes);
+app.use('/single-order', singleOrder);
 
 app.use('/api/checkout', checkoutApiRoutes);
 app.use('/checkout', checkOutRoutes);
