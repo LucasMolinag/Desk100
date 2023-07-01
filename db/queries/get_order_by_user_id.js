@@ -1,8 +1,8 @@
 const db = require('../connection');
 
 const getOrderByUserID = (userID, orderID) => {
-  console.log('getOrderByUserID========='); // test -----------
-  console.log(`userID: ${userID} orderID: ${orderID}`); // test -----------
+  // console.log('getOrderByUserID========='); // test -----------
+  // console.log(`userID: ${userID} orderID: ${orderID}`); // test -----------
   const queryString = `
   SELECT order_id, item_id, items.name, quantity, price*quantity AS total, picture_url
   FROM order_items

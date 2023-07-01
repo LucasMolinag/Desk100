@@ -6,15 +6,20 @@ const renderItems = function(items) {
   if(items.length === 0) {
     $itemsContainer.append($(`<p>Your cart is empty!</p>`));
   } else {
+    let total = 0;
     items.forEach(elm => {
-      $itemsContainer.append(createItemElement(elm));
+      const newItemElm = createItemElement(elm, total);
+      // console.log('newItemElm', newItemElm) // test --------
+      total += newItemElm.total;
+      $itemsContainer.append(newItemElm.$item);
     });
+    $itemsContainer.append(`<div>Total: $${total}</div>`);
   }
-  
 }
 
 // generate individual item
-const createItemElement = function(item) {
+const createItemElement = function(item, total) {
+  total += item.total;
   let $item = $(`
   <article class="item-listing">
       
@@ -27,16 +32,16 @@ const createItemElement = function(item) {
     </article>
   `);
 
-  return $item;
+  return { $item, total} ;
 }
 
 $().ready(function() {
+  // console.log("script - order ------") // testing ------------
   $.ajax({
     method: 'GET',
     url: '/api/order'
   })
   .done((items) => {
-    console.log("script - order ------", items) // testing ------------
     renderItems(items);
   });
 })
