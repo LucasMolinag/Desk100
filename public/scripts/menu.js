@@ -12,7 +12,6 @@ const renderItems = function(items) {
 
 // add item to cart
 function buttonclick(id) {
-  console.log("button id click is: ",id);
   $.ajax({
     method: 'POST',
     url: '/api/addToCart',
