@@ -21,14 +21,24 @@ const renderItems = function(items) {
 const createItemElement = function(item, total) {
   total += item.total;
   let $item = $(`
+  
   <article class="item-listing">
-      
+  <div class = "item">
       <section class="item-listing__details">
-        <img class='item-listing-image'src="${item.picture_url}">
         <h3 class="item-listing__title">${item.name}</h3>
-        <div class="item-listing__quantity">x ${item.quantity}</div>
+        <div class='item-outer'>
+        <img class='item-listing-image'src="${item.picture_url}">
+        
+        
+
+        x ${item.quantity}
+        </div>
+
+       
         <div class="item-listing__total">$ ${item.total}</div>
+      
       </section>
+    </div>
     </article>
   `);
 

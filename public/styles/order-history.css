@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #745c49;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  border: gray 3px solid;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: #ef1616 3px 5px 4px;
+  background-color: #a09c7e;
+  flex-direction: column;
+  align-items: center;
+}
+
+#orders {
+  background-color: bisque;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: white 1px 1px 6px;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+}
+
+.order {
+  margin-bottom: 20px;
+}
+
+.gap {
+  border-bottom: 2px solid black;
+  width: 80%;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+.order-pic {
+  width: 100px;
+  margin-bottom: 49px;
+  border-radius: 15px;
+}
+
+.title {
+  text-decoration: underline;
+  font-weight: bold;
+  margin-bottom: 10px;
+}

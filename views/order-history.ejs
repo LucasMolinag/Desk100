@@ -8,20 +8,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" />
-  <link rel="stylesheet" href="/styles/main.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
-
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/order-history.js"></script>
   <link rel="stylesheet" href="../styles/header.css" />
+  <link rel="stylesheet" href="../styles/order-history.css">
 
 </head>
 
 <body>
-  <h1>Orders:</h1>
-  <ul id="orders"></ul>
+  <%- include('partials/_header') %>
+  <div class="container">
+    <h2 >Previous Orders:</h2>
+    <ul id="orders"></ul>
+  </div>
 </body>
 
 </html>

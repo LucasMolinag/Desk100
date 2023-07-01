@@ -1,13 +1,17 @@
 const db = require('../connection');
 
-const getOrders = (user_ID, order_ID) => {
+const getOrderHistoryByUser = (user_ID) => {
   const queryString = `
   SELECT * 
   FROM orders
+  JOIN order_items ON order_id = orders.id
+  JOIN items ON item_id = items.id
   WHERE user_id = $1 
-  AND time_completed IS NOT NULL;
+  AND time_completed IS NOT NULL
+  GROUP BY orders.id, order_items.order_id, order_items.item_id, items.id
+  ORDER BY orders.id;
   `;
-  const values = [user_ID, order_ID];
+  const values = [user_ID];
 
   return db.query(queryString, values)
     .then(data => {
@@ -20,4 +24,4 @@ const getOrders = (user_ID, order_ID) => {
     });
 };
 
-module.exports = { getOrders };
+module.exports = { getOrderHistoryByUser };
