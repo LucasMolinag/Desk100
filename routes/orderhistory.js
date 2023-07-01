@@ -9,7 +9,11 @@ const express = require('express');
 const router  = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('order-history');
+  const templateVars = {
+    id: req.session.id,
+    name: req.session.name
+  };
+  res.render('order-history', templateVars);
 });
 
 module.exports = router;

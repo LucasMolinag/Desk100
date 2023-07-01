@@ -1,0 +1,37 @@
+main {
+  background-color: bisque;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 60%;
+  border-radius: 20px;
+  box-shadow: white 0px 0px 5px 0px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+body {
+  background-color: #745c49;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-button {
+  width: 20%;
+}

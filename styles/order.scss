@@ -15,16 +15,16 @@ body {
     justify-content: center;
     }
   #items-container {
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color:color.$color-plain-sec ;
-    padding: 30px;
-    width: 80%;
+    width: 75%;
     height: 100%;
   }
   h2{
-    margin: 30px;
+    margin: 3px;
     display: flex;
     justify-content: center;
     font-family: 'Nova Round', cursive;
@@ -32,7 +32,7 @@ body {
     // background-color: #745c494f;
   }
   h3{
-    margin: 30px;
+    margin: 3px;
     display: flex;
     justify-content: center;
     font-family: 'Nova Round', cursive;
@@ -47,17 +47,17 @@ body {
   
 
     .item-listing-image {
+      display: flex;
       box-shadow: 5px 5px brown;
       border-radius: 15%;
-      width: 100%;
-      height: 100%;
+      width: 25%;
+      height: 25%;
       object-fit: cover;
+      margin-right: 22px;
   }
   .item-listing__details{
     padding: 10px;
     margin-top: 10px;
-    display: flex;
-    flex-direction: column;
   
     .item-listing__title{
       font-size: 20px;
@@ -73,6 +73,24 @@ body {
   }
  
   }
+  .item {
+    padding-right: 12px;
+  }
+  .item-outer {
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+    font-size: 20px;
+  }
+  .item-listing__total{
+    display: flex;
+    justify-content: right;
+    font-size: 25px;
+  }
+  .item-quantity {
+    size: 44px;
+  }
+
 }
 
 footer {

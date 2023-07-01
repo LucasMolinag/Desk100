@@ -12,23 +12,23 @@ body main {
   justify-content: center;
 }
 body #items-container {
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #dde5b681;
-  padding: 30px;
-  width: 80%;
+  width: 75%;
   height: 100%;
 }
 body h2 {
-  margin: 30px;
+  margin: 3px;
   display: flex;
   justify-content: center;
   font-family: "Nova Round", cursive;
   font-size: 40px;
 }
 body h3 {
-  margin: 30px;
+  margin: 3px;
   display: flex;
   justify-content: center;
   font-family: "Nova Round", cursive;
@@ -41,17 +41,17 @@ body .item-listing {
   padding: 10px;
 }
 body .item-listing .item-listing-image {
+  display: flex;
   box-shadow: 5px 5px brown;
   border-radius: 15%;
-  width: 100%;
-  height: 100%;
+  width: 25%;
+  height: 25%;
   object-fit: cover;
+  margin-right: 22px;
 }
 body .item-listing .item-listing__details {
   padding: 10px;
   margin-top: 10px;
-  display: flex;
-  flex-direction: column;
 }
 body .item-listing .item-listing__details .item-listing__title {
   font-size: 20px;
@@ -61,6 +61,23 @@ body .item-listing .item-listing__details .order-button {
   width: auto;
   margin-top: 20px;
   font-size: 20px;
+}
+body .item {
+  padding-right: 12px;
+}
+body .item-outer {
+  display: flex;
+  align-items: center;
+  padding-right: 5px;
+  font-size: 20px;
+}
+body .item-listing__total {
+  display: flex;
+  justify-content: right;
+  font-size: 25px;
+}
+body .item-quantity {
+  size: 44px;
 }
 
 footer {
