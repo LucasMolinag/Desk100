@@ -11,7 +11,6 @@ const renderItems = function(items) {
       console.log('elm', elm);
       const newItemElm = createItemElement(elm, total, time);
 
-      // console.log('newItemElm', newItemElm) // test --------
       total += newItemElm.total;
       time += newItemElm.time;
       $itemsContainer.append(newItemElm.$item);
@@ -57,7 +56,6 @@ const createItemElement = function(item, total, time) {
 
 
 $().ready(function() {
-  // console.log("script - order ------") // testing ------------
   $.ajax({
     method: 'GET',
     url: '/api/checkout'

@@ -9,7 +9,6 @@ const addNewOrder = (userID) => {
 
   return db.query(queryString, values)
     .then(data => {
-      // console.log('query - add_order -------'); // test ---------
       return data.rows;
     })
     .catch((e) => {
@@ -26,8 +25,6 @@ const addNewOrderItem = (orderID, itemID) => {
 
   return db.query(queryString, values)
     .then(data => {
-      // console.log('query - add_oreder_item -------'); // test ---------
-      // console.log(data.rows); // test ---------
       return data.rows;
     })
     .catch((e) => {

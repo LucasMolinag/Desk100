@@ -6,7 +6,6 @@ const checkout = function(order_id) {
   FROM order_items
   JOIN items ON order_items.item_id = items.id
   ;`;
-  // const values = [order_id];
 
   return db.query(queryString)
     .then(result => {

@@ -9,7 +9,6 @@ const renderItems = function(items) {
     let total = 0;
     items.forEach(elm => {
       const newItemElm = createItemElement(elm, total);
-      // console.log('newItemElm', newItemElm) // test --------
       total += newItemElm.total;
       $itemsContainer.append(newItemElm.$item);
     });
@@ -46,7 +45,6 @@ const createItemElement = function(item, total) {
 }
 
 $().ready(function() {
-  // console.log("script - order ------") // testing ------------
   $.ajax({
     method: 'GET',
     url: '/api/order'

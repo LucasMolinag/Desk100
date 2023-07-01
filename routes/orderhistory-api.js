@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   const userID = req.session.id;
   console.log(userID)
   if(userID) {
-    database.getOrderHistoryByUser(userID).then((orders) => {    // TODO use user_ID instead of '2'
+    database.getOrderHistoryByUser(userID).then((orders) => {
       console.log('in orderhistory');
       console.log(orders);
       res.send(orders);

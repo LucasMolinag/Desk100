@@ -10,29 +10,22 @@ router.post('/', (req, res) => {
   const { id } = req.body; // item id
   const userID = req.session.id;
   const orderID = req.session.orderID;
-  // const orderID = 2; // test -----------
-  // console.log(`userID: ${userID} orderID: ${orderID} itemID: ${id}`); // test -----------
 
   getOrderItemQueries.getByOrderID(orderID).then((result) => {  
-    // console.log('getByOrderID', result); // test -----------
     if (result.length === 0) {
-      // console.log("order DNE"); // test -----------
       addNewOrderQueries.addNewOrder(userID);
       addNewOrderQueries.addNewOrderItem(orderID, id);
     } else{
       let itemInTable = 0;
       // update item quantity
       result.forEach(item =>{
-        // console.log('forEach - item.item_id ', item.item_id); // test -----------
         if (item.item_id == id) {
           itemInTable = 1;
-          // console.log('item exits ', item.quantity); // test -----------
           updateItemQueries.updateOrder(orderID, id, ++item.quantity);
         }
       });
       // insert new row for the item
       if (itemInTable === 0) {
-        // console.log('insert new row for the item'); // test -----------
         addToExistOrderQueries.addOrder(orderID, id);
       }
     }
