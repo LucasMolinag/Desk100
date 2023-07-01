@@ -1,8 +1,9 @@
 const express = require('express');
 const router  = express.Router();
+const checkout = require("../db/queries/checkout");
 const getOrderByUserIDQuery = require("../db/queries/get_order_by_user_id");
 
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
   // console.log('route - order-api --------'); // test -----------
   const userID = req.session.id;
   const orderID = req.session.orderID;
@@ -13,7 +14,8 @@ router.get('/', (req, res) => {
     .then(items => {
       // console.log('return from jquery'); // test -----------
       // console.log(items); // test -----------
-      res.send(items);
+      // res.send(items);
+      console.log('items',items);
     })
     .catch((e) => res.send(e));
 });

@@ -37,9 +37,6 @@ app.use(
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-const userApiRoutes = require('./routes/users-api');
-const widgetApiRoutes = require('./routes/widgets-api');
-const usersRoutes = require('./routes/users');
 const orderHistoryApi = require('./routes/orderhistory-api');
 const orderHistory = require('./routes/orderhistory');
 const loginRoutes = require('./routes/login');
@@ -53,12 +50,10 @@ const addItemRoutes = require('./routes/addItem');
 const addToCartApiRoutes = require('./routes/addToCart-api');
 const orderApiRoutes = require('./routes/order-api');
 const orderRoutes = require('./routes/order');
-<<<<<<< HEAD
 
 const checkoutApiRoutes = require('./routes/checkout-api');
 const checkOutRoutes = require('./routes/checkout');
-=======
->>>>>>> main
+const submitRoutes = require('./routes/submit');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -76,8 +71,9 @@ app.use('/api/addToCart', addToCartApiRoutes);
 app.use('/api/order', orderApiRoutes);
 app.use('/order', orderRoutes);
 
-// app.use('/api/checkout', checkoutApiRoutes);
-// app.use('/checkout', checkOutRoutes);
+app.use('/api/checkout', checkoutApiRoutes);
+app.use('/checkout', checkOutRoutes);
+app.use('/submit', submitRoutes);
 
 // Note: mount other resources here, using the same pattern above
 
