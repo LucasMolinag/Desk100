@@ -27,8 +27,8 @@ const renderItems = function(items) {
 }
 
 const createItemElement = function(item, total, time) {
-  time += item.cook_time_in_minutes;
-  total += item.price;
+  time = item.cook_time_in_minutes * item.quantity;
+  total = item.price * item.quantity;
   let $item = $(`
   
   <article class="item-listing">
@@ -53,7 +53,8 @@ const createItemElement = function(item, total, time) {
   `);
 
   return { $item, total, time} ;
-}
+};
+
 
 $().ready(function() {
   // console.log("script - order ------") // testing ------------

@@ -19,7 +19,7 @@ const renderItems = function(items) {
 
 // generate individual item
 const createItemElement = function(item, total) {
-  total += item.total;
+  total = item.total;
   let $item = $(`
   
   <article class="item-listing">
