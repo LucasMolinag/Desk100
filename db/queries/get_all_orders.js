@@ -24,4 +24,25 @@ const getOrderHistoryByUser = (user_ID) => {
     });
 };
 
-module.exports = { getOrderHistoryByUser };
+const getOrderHistoryById = (order_ID) => {
+  const queryString = `
+  SELECT * 
+  FROM orders
+  JOIN order_items ON order_id = orders.id
+  JOIN items ON item_id = items.id
+  WHERE orders.id = $1
+  GROUP BY orders.id, order_items.order_id, order_items.item_id, items.id
+  ORDER BY orders.id;
+  `;
+  const values = [order_ID];
+
+  return db.query(queryString, values)
+    .then(data => {
+      return data.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
+
+module.exports = { getOrderHistoryByUser, getOrderHistoryById };

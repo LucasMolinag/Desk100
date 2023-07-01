@@ -3,11 +3,10 @@ const router  = express.Router();
 
 // Cart page
 router.get('/', (req, res) => {
-  // Retrieve the cart items from the session
-  const orderItems = req.session.orderItems || [];
+  
 
   // Render the cart page and pass the cartItems to the template
-  res.render('order', { orderItems });
+  res.render('order', { id:null, name:null });
 });
 
 module.exports = router;
