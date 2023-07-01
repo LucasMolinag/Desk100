@@ -2,13 +2,6 @@ li {
   float: left;
 }
 
-header a {
-  display: block;
-  padding: 8px;
-  background-color: #b11313;
-  font-family: Bungee;
-}
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -19,6 +12,14 @@ ul {
 
 li {
   float: left;
+}
+
+.Desk {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 li a {
