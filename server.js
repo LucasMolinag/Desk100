@@ -50,9 +50,11 @@ const menuApiRoutes = require('./routes/menu-api');
 const menuRoutes = require('./routes/menu');
 const addItemRoutes = require('./routes/addItem');
 const addToCartApiRoutes = require('./routes/addToCart-api');
-
 const orderApiRoutes = require('./routes/order-api');
-const orderRoutes = require('./routes/order.js');
+const orderRoutes = require('./routes/order');
+
+const checkoutApiRoutes = require('./routes/checkout-api');
+const checkOutRoutes = require('./routes/checkout');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -66,9 +68,11 @@ app.use('/api/menu', menuApiRoutes);
 app.use('/menu', menuRoutes);
 app.use('/addItem', addItemRoutes);
 app.use('/api/addToCart', addToCartApiRoutes);
-
 app.use('/api/order', orderApiRoutes);
 app.use('/order', orderRoutes);
+
+// app.use('/api/checkout', checkoutApiRoutes);
+// app.use('/checkout', checkOutRoutes);
 
 // Note: mount other resources here, using the same pattern above
 
