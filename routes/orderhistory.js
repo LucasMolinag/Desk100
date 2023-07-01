@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const id = req.params.id
-  database.getOrderHistoryById(id).then((orders) => {    // TODO use user_ID instead of '2'
+  database.getOrderHistoryById(id).then((orders) => {
     console.log(orders, "orders");
     const templateVars = {
       id: req.session.id,
