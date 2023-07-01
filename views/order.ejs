@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+    
     <!-- load scripts after the rest of the DOM gets loaded -->
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script src="/scripts/order.js"></script>
@@ -13,12 +13,18 @@
 
   <body>
     <%- include('partials/_header') %>
-      <h3>Order</h3>
-      <!-- This section contain individual item -->
-      <section id="items-container"></section>
-
-      <button type="submit" class="btn btn-primary">Checkout</button>
-      </form>
+    <main>
+    <!-- order.ejs -->
+<h3>Order</h3>
+<% if (orderItems.length > 0) { %>
+  <ul>
+    <% orderItems.forEach((item) => { %>
+      <li><%= item.name %> - <%= item.price %></li>
+    <% }) %>
+  </ul>
+<% } else { %>
+  <p>Your cart is empty.</p>
+<% } %>
     </main>
   </body>
 </html>
